@@ -33,13 +33,13 @@ public class DemoLoginController
 		String url = "jdbc:mysql://localhost:3306/unidiner?verifyServerCertificate=false&useSSL=false";
 		connection = DriverManager.getConnection(url,"root","123456"); 
 		Statement stmt = connection.createStatement();
-		String sqlQuery = "Select * From User where username = '" + username + "' and password = '" + pass + "';";
+		String sqlQuery = "Select * From User where user_name = '" + username + "' and user_password = '" + pass + "';";
 		System.out.println(sqlQuery);
 		ResultSet result = stmt.executeQuery(sqlQuery);
 		
-		 while ( result.next() ) {
-             String lastName = result.getString("username");
-             System.out.println(lastName);
+		 while (result.next() ) {
+             String user_name = result.getString("user_name");
+             System.out.println(user_name);
          }
 		}
 		catch(Exception e)
