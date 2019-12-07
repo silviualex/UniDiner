@@ -8,8 +8,6 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<head>
-</head>
 
 <body>
 	<div>
@@ -17,9 +15,8 @@
 	</div>
 	<h1>AM INTRAT AICI</h1>
 
-	<form class="form" name='f' th:action="@{/loginView}"
-		method='POST'>
-		<div class="form-group">
+	<form class="form" action="#" th:object="${user}" th:action="@{/loginView}" method='POST'>
+<!-- 		<div class="form-group">
 			<div class="form-label-group">
 				<input type="text" name='username' id="inputEmail"
 					class="form-control" placeholder="Email address"
@@ -27,14 +24,28 @@
 					for="inputEmail">Email address</label>
 			</div>
 		</div>
-		<!-- PASSS: juahndfivw8rugh -->
+		PASSS: juahndfivw8rugh
 		<div class="form-group">
 			<div class="form-label-group">
 				<input type="password" name='password' id="inputPassword"
 					class="form-control" placeholder="Password" required="required">
 				<label for="inputPassword">Password</label>
 			</div>
+		</div> -->
+		
+		<div>
+			<label>Username:</label>
+			<div> 
+				<input type="text" th:field="*{username}" maxlength="27" size="40" autofocus />
+			</div>
 		</div>
+		<div>
+			<label>Password:</label>
+			<div>
+				<input type="text" th:field="*{password}" maxlength="27" size="40" />
+			</div>
+		</div>
+		
 		<input class="btn btn-primary btn-block" name="submit" type="submit"
 			value="Login" />
 	</form>
