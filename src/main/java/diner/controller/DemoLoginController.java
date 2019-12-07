@@ -51,6 +51,7 @@ public class DemoLoginController {
 		while (result.next()) {
 			String lastName = result.getString("username");
 			System.out.println(lastName);
+
 		}
 
 		return "views/loginView";
