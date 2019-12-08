@@ -21,37 +21,40 @@
 	<link rel="stylesheet" th:href="@{css/sb-admin.css}" href="../../static/css//sb-admin.css" />
 </head> -->
 
-<link rel="stylesheet" type = "text/css" th:href="@{/css/sb-admin.css}" href="../../static/css//sb-admin.css"/>
-
+<link rel="stylesheet" type="text/css" th:href="@{/css/sb-admin.css}"
+	href="../../static/css//sb-admin.css" />
 <body class="bg-dark">
 	<div class="container">
 		<div class="card card-login mx-auto mt-15">
-			<div class="card-header" align = "center">Register</div>
+			<div class="card-header" align="center">Register</div>
 			<div class="card-body">
-				<div th:if="${#request.getParameter('error') == 'true'}" style="color: red; margin: 10px 0px;">
-					<h6 align = "center" >Autentificare esuata:</h6>
-					 <span th:if="${#session!= null and 
-								#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null and
-		 						#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message == 'Bad credentials'}">
-						<h6 align = "center" >Username sau parola incorecte</h6> 
-					</span>
-				</div>			
-				<form class="form" name='f' th:action="@{/j_spring_security_check}" method='POST'> 
+				<form class="form" name='f' th:action="@{/j_spring_security_check}"
+					method='POST'>
 					<div class="form-group">
 						<div class="form-label-group">
-							<input type="text" name='username' id="inputEmail" class="form-control"placeholder="Email address" 
-							required="required" autofocus="autofocus"> 
-							<label for="inputEmail">Email address</label>
+							<input type="text" name='username' id="inputEmail"
+								class="form-control" placeholder="Email address"
+								required="required" autofocus="autofocus"> <label
+								for="inputEmail">Email address</label>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="form-label-group">
-							<input type="password" name='password' id="inputPassword" class="form-control" placeholder="Password" required="required"> 
+							<input type="password" name='password' id="inputPassword"
+								class="form-control" placeholder="Password" required="required">
 							<label for="inputPassword">Password</label>
 						</div>
-					</div>					
-					<input class="btn btn-primary btn-block" name="submit" type = "submit" value = "Login"/>
-				</form>				
+					</div>
+					<div class="form-group">
+						<div class="form-label-group">
+							<input type="password" name='password' id="inputPassword"
+								class="form-control" placeholder="Password" required="required">
+							<label for="inputPassword">Repeat Password</label>
+						</div>
+					</div>
+					<input class="btn btn-primary btn-block" name="submit"
+						type="submit" value="Create account" />
+				</form>
 			</div>
 		</div>
 	</div>
