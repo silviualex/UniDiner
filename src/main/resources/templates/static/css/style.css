@@ -1,0 +1,13 @@
+body
+{
+	background: #E6E6FA;
+	height: 10000px;
+}
+
+.content
+{
+	max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+}

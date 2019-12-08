@@ -1,0 +1,16 @@
+#sticky {
+  padding: 0.5ex;
+  width: 100%;
+  background-color: white;
+  color: black;
+  font-size: 2em;
+  border-radius: 0.5ex;
+  opacity: 1;
+}
+
+#sticky.stick {
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  border-radius: 0 0 0.5em 0.5em;
+}

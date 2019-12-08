@@ -1,0 +1,22 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/css/sideBarCSS.css}"
+	href="../../static/css/sideBarCSS.css" />
+<link rel="stylesheet" th:href="@{/css/cssTemplate.css}"
+	href="../../static/css/cssTemplate.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+	<nav class ="leftBar" style="overflow-x: visible">
+		<section>
+			<div>
+				<img class="logo" src="../../resources/static/images/yes.png"
+					th:src="@{images/yes.png}" style="margin-left: -14px;"/>
+			</div>
+			<div id="buttons">
+				<a class="btn btn-primary btn-block" style="margin-top: 40%;" th:href="@{/orders}">Comenzile mele</a>
+				<a class="btn btn-primary btn-block" style="margin-top: 10%;" th:href="@{/employeeOrderView}">Adauga o comanda</a>
+			</div>
+		</section>
+	</nav>
+	<th:block th:include="layout/bootstrapIncludes.html"></th:block>
+</body>

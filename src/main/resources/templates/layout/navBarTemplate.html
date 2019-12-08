@@ -1,0 +1,73 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/css/sideBarCSS.css}"
+	href="../../static/css/sideBarCSS.css" />
+<link rel="stylesheet" th:href="@{/css/cssTemplate.css}"
+	href="../../static/css/cssTemplate.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+	<nav class="leftBar">
+		<section>
+			<div>
+				<a th:href="@{index}">
+					<img class="logo" src="../../resources/static/images/logo.png" th:src="@{images/logo.png}" 
+					style="margin-left: -6px;"/>
+				</a>
+				
+			</div>
+		</section>
+		<br>
+		<div>
+			<button class="accordion btn btn-primary" type="button">Adauga</button>
+			<div class="panel">
+				<a class="subMenu subMenuHover" href="/foodView"
+					th:href="@{/foodView}">Mancare</a><br> <a
+					class="subMenu subMenuHover" href="/categoryView"
+					th:href="@{/categoryView}">Categorie</a><br> <a
+					class="subMenu subMenuHover" href="/menuView"
+					th:href="@{/menuView}">Meniu </a><br>
+			</div>
+		</div>
+		<br>
+		<div>
+			<button class="accordion btn btn-primary" type="button">Meniu</button>
+			<div class="panel">
+				<a class="subMenu subMenuHover" href="/viewMenuView"
+					th:href="@{/viewMenuView}"> Vizualizeaza meniu</a>
+			</div>
+		</div>
+		<br>
+		<div>
+			<button class="accordion btn btn-primary" type="button">Rapoarte</button>
+			<div class="panel">
+
+				<a class="subMenu subMenuHover" href="/reportView.html"
+					th:href="@{/reportView}"> Raport pe zile </a> 
+					<br> 
+				<a class="subMenu subMenuHover" href="/userReportView.html"
+					th:href="@{/userReportView}"> Raport utilizatori </a>
+					<br>
+				<a class = "subMenu subMenuHover" href="/statisticsView.html"
+					th:href="@{/statisticsView}"> Statistica</a>
+			</div>
+		</div>
+	</nav>
+
+	<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var panel = this.nextElementSibling;
+				if (panel.style.maxHeight) {
+					panel.style.maxHeight = null;
+				} else {
+					panel.style.maxHeight = panel.scrollHeight + "px";
+				}
+			});
+		}
+	</script>
+	<th:block th:include="layout/bootstrapIncludes.html"></th:block>
+</body>

@@ -1,0 +1,25 @@
+body {
+  display: inline-block;
+  background: #00AFF9 url(https://cbwconline.com/IMG/Codepen/Unplugged.png) center/cover no-repeat;
+  height: 100vh;
+  margin: 0;
+  color: white;
+}
+
+.text1 {
+  margin: .8em 3rem;
+  font: 4em Roboto;
+  color: white;
+}
+.text2 {
+  display: inline-block;
+  margin: .2em 3rem;
+  font: 2em Roboto;
+  color: white;
+}
+.adminImage{
+    right: 0;
+    top: 0;
+    width:10px;
+    height:10px;
+}
