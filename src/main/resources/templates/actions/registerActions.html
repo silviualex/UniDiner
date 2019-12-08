@@ -28,27 +28,30 @@
 		<div class="card card-login mx-auto mt-15">
 			<div class="card-header" align="center">Register</div>
 			<div class="card-body">
-				<form class="form" name='f' th:action="@{/j_spring_security_check}"
-					method='POST'>
+				<form class="form" name='f' th:object = "${userDTO}" th:action="@{/registerView}" method='POST'>
+					
 					<div class="form-group">
 						<div class="form-label-group">
 							<input type="text" name='username' id="inputEmail"
-								class="form-control" placeholder="Email address"
-								required="required" autofocus="autofocus"> <label
-								for="inputEmail">Email address</label>
+								class="form-control" placeholder="Username"
+								required="required" autofocus="autofocus" th:field="*{username}"> 
+							<label for="inputEmail">Username</label>
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<div class="form-label-group">
 							<input type="password" name='password' id="inputPassword"
-								class="form-control" placeholder="Password" required="required">
+								class="form-control" placeholder="Password" required="required" th:field="*{password}">
 							<label for="inputPassword">Password</label>
 						</div>
 					</div>
+					
+					
 					<div class="form-group">
 						<div class="form-label-group">
 							<input type="password" name='password' id="inputPassword"
-								class="form-control" placeholder="Password" required="required">
+								class="form-control" placeholder="Repeat Password" required="required" th:field="*{repeatPassowrd}">
 							<label for="inputPassword">Repeat Password</label>
 						</div>
 					</div>
