@@ -1,0 +1,43 @@
+
+ * {
+ 	padding: 0px;
+ 	margin: 0px; 
+    box-sizing: border-box; 
+  }
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    margin: 0;
+  }
+  .col-1 {
+    background: #2A3F54;
+    width: 205px;
+  }
+  .col-2 {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+  .content > article {
+    flex: 1;
+    min-height: 60vh;,
+  }
+  header, footer {
+    background: #0072C6;
+    height: 100%;
+  }
+  header, footer, article, nav {
+    padding: 1em;
+    resize:auto;
+  }
+  .leftBar{
+  	position:fixed;
+  	z-index: 1;
+  	overflow-x: hidden;
+  	width:200px;
+  }

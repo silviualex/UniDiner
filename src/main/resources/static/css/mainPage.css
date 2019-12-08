@@ -1,0 +1,23 @@
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
+.name {
+	float: left;
+	margin-left: 3%;
+	font-size: large;
+}
+
+.price {
+	float: left;
+	margin-left: 37%;
+	font-size: large;
+}
+.checkboxClass {
+	float: left;
+	margin-left: 30%;
+}
+
+.checkboxText {
+	font-size: large;
+}
