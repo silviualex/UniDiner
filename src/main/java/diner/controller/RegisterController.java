@@ -40,7 +40,7 @@ public class RegisterController
 				
 				Statement stmt = conn.createStatement();
 				//INSERT INTO `table_name`(column_1,column_2,...) VALUES (value_1,value_2,...);
-				String querry  = "INSERT INTO  username, password in"
+				String querry  = "INSERT INTO  username, password in";
 				
 		}
 		return "views/RegisterView";
