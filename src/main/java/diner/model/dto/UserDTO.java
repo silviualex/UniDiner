@@ -6,6 +6,11 @@ public class UserDTO
 	private String password;
 	private String repeatPassword;
 	
+	public UserDTO()
+	{
+		
+	}
+	
 	public UserDTO(String username, String password, String repeatPassword) {
 		super();
 		this.username = username;
