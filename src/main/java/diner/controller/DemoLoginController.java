@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import diner.config.DBConnection;
-import diner.entity.User;
+import diner.entity.UserDiner;
 
 @Controller
 public class DemoLoginController {
@@ -24,13 +24,13 @@ public class DemoLoginController {
 	@GetMapping("/loginView")
 	public String getMethod(Model model, Principal principal, HttpSession session) {
 
-		model.addAttribute("user", new User());
+		model.addAttribute("user", new UserDiner());
 
 		return "views/loginView";
 	}
 
 	@PostMapping("/loginView")
-	public String postLoginView(Model model, @ModelAttribute User user) throws SQLException {
+	public String postLoginView(Model model, @ModelAttribute UserDiner user) throws SQLException {
 
 		// return username whatever
 		// String username = "' or ''='";
