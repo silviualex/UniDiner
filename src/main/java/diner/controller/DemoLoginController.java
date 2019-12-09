@@ -2,7 +2,6 @@ package diner.controller;
 
 import java.security.Principal;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import diner.config.DBConnection;
-import diner.entity.User;
+import diner.entity.UserDiner;
 
 @Controller
 public class DemoLoginController {
@@ -24,34 +23,22 @@ public class DemoLoginController {
 	@GetMapping("/loginView")
 	public String getMethod(Model model, Principal principal, HttpSession session) {
 
-		model.addAttribute("user", new User());
+		model.addAttribute("user", new UserDiner());
 
 		return "views/loginView";
 	}
 
 	@PostMapping("/loginView")
-	public String postLoginView(Model model, @ModelAttribute User user) throws SQLException {
+	public String postLoginView(Model model, @ModelAttribute UserDiner user) throws SQLException {
 
-		// return username whatever
-		// String username = "' or ''='";
-		// String pass = "' or ''='";
-
-		// bypass password
-		String username = "diana'; #";
-		String pass = "pass'";
-
-		// String username = "diana";
-		// String pass = "pass'; DROP TABLE user; # ";
-
+		model.addAttribute("user", new UserDiner());
 		Connection connection = DBConnection.getConnctionToDB();
 		Statement stmt = connection.createStatement();
-		String sqlQuery = "Select * From User where username = '" + username + "' and password = '" + pass + "';";
+		String sqlQuery = "SELECT * FROM User WHERE user_name = '" + user.getName() + "' AND user_password = '" + user.getPassword() + "';";
 		ResultSet result = stmt.executeQuery(sqlQuery);
 
-		while (result.next()) {
-			String lastName = result.getString("username");
-			System.out.println(lastName);
-
+		if (result.next() ) {
+			return "views/index";
 		}
 
 		return "views/loginView";

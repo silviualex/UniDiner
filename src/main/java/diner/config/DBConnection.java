@@ -26,7 +26,7 @@ public class DBConnection {
 	
 	public static Connection getConnctionToDB() throws SQLException {
 		
-		if (connection.isClosed() || connection == null) {
+		if (connection == null) {
 			new DBConnection();
 			return connection;
 		}
