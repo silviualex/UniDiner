@@ -30,6 +30,9 @@ public class UserDiner {
 	@Column(name="user_password")
 	private String password;
 	
+	@Column(name="user_repeatPassword")
+	private String repeatPassword;
+	
 	@OneToMany(mappedBy = "userDiner")
 	private List<Order> orders;
 
@@ -44,6 +47,20 @@ public class UserDiner {
 		super();
 		this.roles = new ArrayList<>();
 	}
+
+	
+	
+	public String getRepeatPassword() {
+		return repeatPassword;
+	}
+
+
+
+	public void setRepeatPassword(String repeatPassword) {
+		this.repeatPassword = repeatPassword;
+	}
+
+
 
 	public Integer getId() {
 		return id;
