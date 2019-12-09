@@ -11,7 +11,6 @@ public class DBConnection {
 	private final String PASSWORD = "123456";
 	private static Connection connection = null;
 	
-	
 	private DBConnection() {
 		
 		try {
