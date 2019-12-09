@@ -11,8 +11,7 @@ public class DBConnection {
 	private final String PASSWORD = "123456";
 	private static Connection connection = null;
 	
-	private DBConnection() {
-		
+	private DBConnection() {		
 		try {
 			
 			DBConnection.connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); 
@@ -25,9 +24,9 @@ public class DBConnection {
 	
 	public static Connection getConnctionToDB() throws SQLException {
 		
-		if (connection.isClosed() || connection == null) {
+		if (connection == null) {
 			new DBConnection();
-			return connection;
+		return connection;
 		}
 		
 		return connection;
