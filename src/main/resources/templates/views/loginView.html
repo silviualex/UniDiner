@@ -9,47 +9,49 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<body>
-	<div>
-		<!-- END MODULE: GLOBAL-HEADER-->
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+
+<!-- Custom styles for this template-->
+<!-- <link href="css/sb-admin.css" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{css/sb-admin.css}" href="../../static/css//sb-admin.css" />
+</head> -->
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/sb-admin.css}"
+	href="../../static/css//sb-admin.css" />
+
+<body class="bg-dark">
+	<div class="container">
+		<div class="card card-login mx-auto mt-15">
+			<div class="card-header" align="center">Login</div>
+			<div class="card-body">
+				<form class="form" action="#" th:object="${user}" th:action="@{/loginView}" method='POST'>
+					<div class="form-group">
+						<div class="form-label-group">
+							<input type="text" name='username' id="inputEmail"
+								class="form-control" placeholder="Username"
+								required="required" autofocus="autofocus" th:field="*{name}"> 
+							<label for="inputEmail">Username</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-label-group">
+							<input type="password" name='password' id="inputPassword"
+								class="form-control" placeholder="Password" required="required" th:field = "*{password}">
+							<label for="inputPassword">Password</label>
+						</div>
+					</div>	
+					<input class="btn btn-primary btn-block" name="submit"
+						type="submit" value="Login" />		
+					<a href = "/registerView">Don't have an account? Create one!</a>				
+				</form>
+			</div>
+		</div>
 	</div>
-	<h1>AM INTRAT AICI</h1>
-
-	<form class="form" action="#" th:object="${user}" th:action="@{/loginView}" method='POST'>
-<!-- 		<div class="form-group">
-			<div class="form-label-group">
-				<input type="text" name='username' id="inputEmail"
-					class="form-control" placeholder="Email address"
-					required="required" autofocus="autofocus"> <label
-					for="inputEmail">Email address</label>
-			</div>
-		</div>
-		PASSS: juahndfivw8rugh
-		<div class="form-group">
-			<div class="form-label-group">
-				<input type="password" name='password' id="inputPassword"
-					class="form-control" placeholder="Password" required="required">
-				<label for="inputPassword">Password</label>
-			</div>
-		</div> -->
-		
-		<div>
-			<label>Username:</label>
-			<div> 
-				<input type="text" th:field="*{name}" maxlength="27" size="40" autofocus />
-			</div>
-		</div>
-		<div>
-			<label>Password:</label>
-			<div>
-				<input type="password" th:field="*{password}" maxlength="27" size="40" />
-			</div>
-		</div>
-		
-		<input class="btn btn-primary btn-block" name="submit" type="submit"
-			value="Login" />
-	</form>
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Core plugin JavaScript-->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
-
-
-</html>
