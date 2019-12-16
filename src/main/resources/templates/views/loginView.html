@@ -1,55 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<body>
-	<div>
-		<!-- END MODULE: GLOBAL-HEADER-->
-	</div>
-	<h1>AM INTRAT AICI</h1>
-
-	<form class="form" action="#" th:object="${user}" th:action="@{/loginView}" method='POST'>
-<!-- 		<div class="form-group">
-			<div class="form-label-group">
-				<input type="text" name='username' id="inputEmail"
-					class="form-control" placeholder="Email address"
-					required="required" autofocus="autofocus"> <label
-					for="inputEmail">Email address</label>
-			</div>
-		</div>
-		PASSS: juahndfivw8rugh
-		<div class="form-group">
-			<div class="form-label-group">
-				<input type="password" name='password' id="inputPassword"
-					class="form-control" placeholder="Password" required="required">
-				<label for="inputPassword">Password</label>
-			</div>
-		</div> -->
-		
-		<div>
-			<label>Username:</label>
-			<div> 
-				<input type="text" th:field="*{name}" maxlength="27" size="40" autofocus />
-			</div>
-		</div>
-		<div>
-			<label>Password:</label>
-			<div>
-				<input type="password" th:field="*{password}" maxlength="27" size="40" />
-			</div>
-		</div>
-		
-		<input class="btn btn-primary btn-block" name="submit" type="submit"
-			value="Login" />
-	</form>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>	
+	<th:block th:include="actions/loginActions.html"></th:block>
 </body>
-
-
 </html>
